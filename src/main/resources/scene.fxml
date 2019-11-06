@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLController">
+   <bottom>
+      <Pane prefHeight="40.0" prefWidth="890.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="send" layoutX="838.0" layoutY="5.0" mnemonicParsing="false" onAction="#onBtClick" text="send" />
+            <TextField fx:id="line" layoutY="5.0" prefHeight="31.0" prefWidth="824.0" />
+         </children></Pane>
+   </bottom>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="list" prefHeight="581.0" prefWidth="200.0" />
+         </children></Pane>
+   </right>
+   <center>
+      <Pane prefHeight="535.0" prefWidth="690.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="text" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="690.0" />
+         </children></Pane>
+   </center>
+</BorderPane>
