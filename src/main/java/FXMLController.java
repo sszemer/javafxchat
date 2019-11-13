@@ -10,7 +10,6 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.Arrays;
 
-
 public class FXMLController {
 
     @FXML
@@ -37,8 +36,6 @@ public class FXMLController {
     public void onBtClick(javafx.event.ActionEvent actionEvent) throws IOException {
         String text = line.getText();
         line.setText("");
-//        this.text.appendText(text+"\n");
-
         byte[] buf = new byte[1024];
         DatagramPacket packet = new DatagramPacket(buf, buf.length, address, 6666);
         byte[] name = Arrays.copyOf("Sebastian".getBytes(),30);
