@@ -13,14 +13,10 @@ import java.util.concurrent.Executors;
 
 public class MainClass extends Application {
 
-    public UdpConnectionThread receiveMessagesThread(DatagramSocket datagramSocket,FXMLController controller){
-        return new UdpConnectionThread(datagramSocket, controller);
-    }
-
     @Override
     public void start(Stage stage) throws Exception {
         final int PORT = 6666;
-        final InetAddress ADDRESS = InetAddress.getByName("192.168.8.255");
+        final InetAddress ADDRESS = InetAddress.getByName("192.168.1.255");
         DatagramSocket datagramSocket = new DatagramSocket(PORT);
         ExecutorService executorService = Executors.newCachedThreadPool();
         //fxml laduje scene
@@ -30,7 +26,7 @@ public class MainClass extends Application {
         controller.setSocket(datagramSocket);
         controller.setAddress(ADDRESS);
 
-        executorService.submit(receiveMessagesThread(datagramSocket, controller));
+        executorService.submit(new UdpConnectionThread(datagramSocket, controller));
 
         //tworzymy glowne okno
         Scene scene = new Scene(root);

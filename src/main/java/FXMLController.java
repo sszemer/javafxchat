@@ -37,12 +37,12 @@ public class FXMLController {
     public void onBtClick(javafx.event.ActionEvent actionEvent) throws IOException {
         String text = line.getText();
         line.setText("");
-        this.text.appendText(text+"\n");
+//        this.text.appendText(text+"\n");
 
         byte[] buf = new byte[1024];
         DatagramPacket packet = new DatagramPacket(buf, buf.length, address, 6666);
         byte[] name = Arrays.copyOf("Sebastian".getBytes(),30);
-        byte[] data = Arrays.copyOf(this.text.getText().getBytes(),1024-30);
+        byte[] data = Arrays.copyOf(text.getBytes(),1024-30);
         System.arraycopy(name,0,buf,0,30);
         System.arraycopy(data,0,buf,31,993);
         packet.setData(buf);
